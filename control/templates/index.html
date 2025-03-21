@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Control</title>
+    <script>
+        function sendCommand(speed) {
+            fetch('http://127.0.0.1:8000/set_speed/', {  // Django URL
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ speed: speed })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Control Ceiling Fan</h1>
+    <button onclick="sendCommand('OFF')">OFF</button>
+    <button onclick="sendCommand('LOW')">LOW</button>
+    <button onclick="sendCommand('MEDIUM')">MEDIUM</button>
+    <button onclick="sendCommand('HIGH')">HIGH</button>
+</body>
+</html>
