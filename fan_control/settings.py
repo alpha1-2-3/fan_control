@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_-g=3%5eurw9!slvcig@91%y^f7c0!d)w($yavu-v^7hm*u*k2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [fan-control-xt24.onrender.com]
+ALLOWED_HOSTS = ['fan-control-xt24.onrender.com', '127.0.0.1']
 
 
 # Application definition
